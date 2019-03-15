@@ -21,8 +21,8 @@ public class ProducerSender {
 		conn.start();
 		//3.创建session对象
 		Session session = conn.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);
-		//4.创建对列
-		Destination destination = session.createQueue("my-queue");
+		//4.创建对列,一个信息可以发布到多个队列中，多个队列用逗号隔开
+		Destination destination = session.createQueue("my-queue3,my-queue4");
 		
 		//5.创建提供者，作用为发送消息
 		MessageProducer messageProducer = session.createProducer(destination);

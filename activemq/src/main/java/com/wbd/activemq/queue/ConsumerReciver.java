@@ -3,7 +3,10 @@ package com.wbd.activemq.queue;
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Message;
 import javax.jms.MessageConsumer;
+import javax.jms.MessageListener;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
@@ -23,18 +26,23 @@ public class ConsumerReciver {
 		Connection conn = cf.createConnection();
 		Session session = conn.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE);
 		conn.start();
-		Destination destination = session.createQueue("my-queue");
+		Destination destination = session.createQueue("my-queue3");
 		MessageConsumer consumer=session.createConsumer(destination);
-		int i=0;
-		while(i<5) {
-			TextMessage tm  =(TextMessage) consumer.receive();
-			//设置消息属性,可选， 消息包含， 消息头，消息体， 消息属性
-		System.out.println("消息属性 name="+tm.getStringProperty("name"));
-		System.out.println("消息属性 age ="+tm.getIntProperty("age"));
+		consumer.setMessageListener(new MessageListener() {
 			
-			//System.out.println("收到的消息"+tm.getText());
-			i++;
-		}
+			public void onMessage(Message message) {
+				
+				TextMessage tm = (TextMessage) message;
+				
+				try {
+					System.out.println("监听到的消息"+tm.getText());
+				} catch (JMSException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
 
 		session.commit();
 		session.close();

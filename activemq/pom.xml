@@ -8,7 +8,7 @@
 
 	<dependencies>
 
-	  <dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>4.0.0.RELEASE</version>
@@ -18,46 +18,56 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>4.0.0.RELEASE</version>
 		</dependency>
-    <dependency>
-		<groupId>org.springframework.data</groupId>
-		<artifactId>spring-data-commons</artifactId>
-		<version>1.5.1.RELEASE</version>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework.data</groupId>
-		<artifactId>spring-data-mongodb</artifactId>
-		<version>1.4.2.RELEASE</version>
-	</dependency>
-    
-    <dependency>
-		<groupId>org.mongodb</groupId>
-		<artifactId>mongo-java-driver</artifactId>
-		<version>2.12.1</version>
-	</dependency> 
-    
-    
-    <dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-jms</artifactId>
-		<version>4.0.0.RELEASE</version>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.activemq</groupId>
-		<artifactId>activemq-pool</artifactId>
-		<version>5.9.0</version>
-	</dependency>
-    <dependency>
-		<groupId>org.apache.activemq</groupId>
-		<artifactId>activemq-all</artifactId>
-		<version>5.9.0</version>
-	</dependency>
-	
-	<dependency>
-		<groupId>org.apache.xbean</groupId>
-		<artifactId>xbean-spring</artifactId>
-		<version>3.16</version>
-	</dependency>
-    <!-- aspectj的jar -->
+		
+
+
+
+<!-- mongodb java driver -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.4.3</version>
+        </dependency>
+        <!-- spring data mongodb -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+            <version>1.11.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>1.8.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons-core</artifactId>
+            <version>1.4.1.RELEASE</version>
+        </dependency>
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>4.0.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-pool</artifactId>
+			<version>5.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-all</artifactId>
+			<version>5.9.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.xbean</groupId>
+			<artifactId>xbean-spring</artifactId>
+			<version>3.16</version>
+		</dependency>
+		<!-- aspectj的jar -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
@@ -68,16 +78,8 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.7.4</version>
 		</dependency>
-    <dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>4.0.0.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-			<version>4.0.0.RELEASE</version>
-		</dependency>
+		
+	
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
@@ -93,5 +95,7 @@
 			<artifactId>spring-tx</artifactId>
 			<version>4.0.0.RELEASE</version>
 		</dependency>
+
+
 	</dependencies>
 </project>
